@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import Products from './aplications/products'
+import AddProduct from './aplications/addProduct'
 
 function App() {
+  const [app, setApp] = useState<JSX.Element>(<Products />)
+
 
   return (
     <div className="flex h-screen bg-gray-100 flex-row">
@@ -19,7 +22,7 @@ function App() {
         </nav>
       </aside>
 
-      <div className='flex flex-col w-full m-6'>
+      <div className='flex flex-1 flex-col w-full p-8 overflow-y-auto'>
         <header className='w-full'>
           <h3 className='text-3xl font-semibold text-gray-800 mb-6'>Bienvenido, name</h3>
           <div className='grid grid-rows-3 gap-2 w-full place-items-center sm:grid-cols-3 sm:grid-rows-1'>
@@ -39,11 +42,12 @@ function App() {
         </header>
 
         <div className='ml-4 mt-6'>
-          <button className='text-base font-bold px-4 py-1 bg-white rounded-xl shadow'>Productos:</button>
-          <button className='text-base font-bold px-4 py-1 text-gray-500 rounded-xl'>Añadir producto:</button>
+          <button onClick={() => setApp(<Products></Products>)} className={`text-base font-bold px-4 py-1 rounded-xl ${app.type === Products ? "bg-white shadow" : "text-gray-500"}`}>Productos:</button>
+          <button onClick={() => setApp(<AddProduct />)} className={`text-base font-bold px-4 py-1 rounded-xl ${app.type === AddProduct ? "bg-white shadow" : "text-gray-500"}`}>Añadir producto:</button>
         </div>
 
-        <Products />
+        {app}
+
       </div>
     </div>
   )
