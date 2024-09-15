@@ -1,6 +1,28 @@
+import { useState, useEffect } from 'react';
+import { products } from '../interface/productsResponse';
+import Product from './componet/product';
+import axios from 'axios';
 
+
+axios.defaults.withCredentials = true;
+
+const api = 'http://localhost:8080/api/product/seller/products';
 
 function Products() {
+    const [productsList, setProductsList] = useState<Array<products>>([])
+
+    useEffect(() => {
+        axios.get(api)
+            .then((response) => {
+                const data: products[] = response.data;
+                setProductsList(data);
+            })
+            .catch((error) => {
+                alert("Error");
+                console.log(error);
+            });
+    }, []);
+
     return (
         <div className="mt-4 w-full">
             <h4 className="text-2xl font-semibold text-gray-800 mb-6">Administrar productos:</h4>
@@ -10,12 +32,9 @@ function Products() {
                 <span className="text-gray-600">Stock</span>
                 <span className="text-gray-600">Acciones</span>
             </div>
-            <div className="grid grid-cols-4">
-                <div className="flex items-center">Producto</div>
-                <div className="flex items-center">$500</div>
-                <div className="flex items-center">45 unidades</div>
-                <div ><button className="px-2 py-1 mr-[3px] border border-gray-600 bg-white rounded">Editar</button><button className="px-2 py-1 border border-red-600 text-white bg-red-600 rounded">Eliminar</button></div>
-            </div>
+            {productsList.map((product) => (
+                <Product key={product.id} name={product.name} price={product.price} stock={product.stock} sku={product.sku} />
+            ))}
         </div>
     )
 }

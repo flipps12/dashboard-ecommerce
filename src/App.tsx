@@ -1,10 +1,23 @@
 import { useState } from 'react'
 import Products from './aplications/products'
 import AddProduct from './aplications/addProduct'
+import Login from './Login';
+import axios from 'axios';
+
+
 
 function App() {
   const [app, setApp] = useState<JSX.Element>(<Products />)
 
+  function getCookie(name: string): string | null {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+    return null;
+  }
+
+  if (getCookie('jwt') == null) return (<Login />);
+  
 
   return (
     <div className="flex h-screen bg-gray-100 flex-row">
