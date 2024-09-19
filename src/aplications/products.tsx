@@ -33,7 +33,7 @@ function Products() {
                 <span className="text-gray-600">Acciones</span>
             </div>
             {productsList.map((product) => (
-                <Product key={product.id} name={product.name} price={product.price} stock={product.stock} sku={product.sku} />
+                <Product key={product.id} name={product.name} price={product.price} stock={product.stock} id={product.id} />
             ))}
         </div>
     )
