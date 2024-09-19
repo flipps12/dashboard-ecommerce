@@ -1,7 +1,7 @@
 
 function Product ({ name, price, stock, sku }: any) {
     return (
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-4 mb-1">
             <div className="flex items-center">{ name }</div>
             <div className="flex items-center">${ price }</div>
             <div className="flex items-center">{ stock }</div>

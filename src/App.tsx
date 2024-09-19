@@ -34,7 +34,7 @@ function App() {
         </nav>
       </aside>
 
-      <div className='flex flex-1 flex-col w-full p-8 overflow-y-auto'>
+      <div className='flex flex-1 flex-col w-full p-8 overflow-y-scroll'>
         <header className='w-full'>
           <h3 className='text-3xl font-semibold text-gray-800 mb-6'>Bienvenido</h3>
           <div className='grid grid-rows-3 gap-2 w-full place-items-center sm:grid-cols-3 sm:grid-rows-1'>

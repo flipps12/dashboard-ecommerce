@@ -18,7 +18,7 @@ function Products() {
                 setProductsList(data);
             })
             .catch((error) => {
-                alert("Error");
+                // alert("Error");
                 console.log(error);
             });
     }, []);
