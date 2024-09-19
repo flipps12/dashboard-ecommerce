@@ -1,4 +1,4 @@
-export interface AddProduct {
+export interface AddProductInterface {
     sku: string;
     name: string;
     description: string;

@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import axios from "axios"
-import { AddProduct } from "../interface/addProductRequest";
+import { AddProductInterface } from "../interface/addProductRequest";
 
 const api = "http://localhost:8080/api/product/seller";
 
 function AddProduct() {
     const [data, setData] = useState<string>()
-    const [dataRequest, setDataRequest] = useState<AddProduct>()
+    const [dataRequest, setDataRequest] = useState<AddProductInterface>()
     const [stockNec, setStockNec] = useState<boolean>(true)
 
     const handleClicStock = () => {

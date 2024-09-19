@@ -1,4 +1,4 @@
-import { ReactElement, StrictMode, useState } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import StatusGlobal from './aplications/componet/statusGlobal.tsx'
