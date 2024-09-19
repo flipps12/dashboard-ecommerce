@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Products from './aplications/products'
 import AddProduct from './aplications/addProduct'
 import Login from './Login';
-import axios from 'axios';
 
 
 
@@ -37,7 +36,7 @@ function App() {
 
       <div className='flex flex-1 flex-col w-full p-8 overflow-y-auto'>
         <header className='w-full'>
-          <h3 className='text-3xl font-semibold text-gray-800 mb-6'>Bienvenido, name</h3>
+          <h3 className='text-3xl font-semibold text-gray-800 mb-6'>Bienvenido</h3>
           <div className='grid grid-rows-3 gap-2 w-full place-items-center sm:grid-cols-3 sm:grid-rows-1'>
             <div className='flex flex-col h-24 w-5/6 rounded-2xl shadow border bg-white min-w-32 sm:h-32 sm:w-5/6 p-4'>
               <div className='flex flex-row justify-between flex-1'><h5 className='text-xl font-medium'>Titulo</h5> <i>l</i></div>
