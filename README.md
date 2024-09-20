@@ -17,7 +17,7 @@ Dashboard Front-End para Vendedores de los Ecommerce del servidor [Java + Spring
 
 Ejecutar servidor (npm requerido):
 
-```bash
-npm install
-npm run dev
+```
+$ npm install
+$ npm run dev
 ```
