@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <a href="https://github.com/flipps12">
-        <img src="https://skillicons.dev/icons?i=react,tailwind,vite" /><br />
+        <img src="https://skillicons.dev/icons?i=react,tailwind,vite,npm" /><br />
     </a>
 </div>
 <br>
