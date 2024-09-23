@@ -2,7 +2,9 @@ import { useState } from "react"
 import axios from "axios"
 import { AddProductInterface } from "../interface/addProductRequest";
 
-const api = "http://localhost:8080/api/product/seller";
+axios.defaults.withCredentials = true;
+
+const api = "https://servidor1.store:8080/api/product/seller";
 
 function AddProduct() {
     const [data, setData] = useState<string>()
@@ -32,7 +34,7 @@ function AddProduct() {
             pictureUrl: (document.getElementById("pictureUrl") as HTMLInputElement)?.value ?? ""
         });
         console.log(dataRequest)
-        axios.post(api, dataRequest)
+        axios.post(api, dataRequest, { withCredentials: true })
             .then((response) => {
                 const data: string = response.data;
                 setData(data);

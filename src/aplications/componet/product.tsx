@@ -3,7 +3,7 @@ import { useState } from "react";
 
 axios.defaults.withCredentials = true;
 
-const api = "http://localhost:8080/api/product/seller/delete/"
+const api = "https://servidor1.store:8080/api/product/seller/delete/"
 
 function Product({ name, price, stock, id }: any) {
     const [isVisible, setIsVisible] = useState(true);

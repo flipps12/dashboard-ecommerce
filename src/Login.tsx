@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = 'http://localhost:8080/api/auth';
+const api = 'https://servidor1.store:8080/api/auth';
 
 const setCookie = (name: string, value: string, days: number) => {
     const expires = new Date(Date.now() + days * 864e5).toUTCString();

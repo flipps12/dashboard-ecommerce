@@ -11,7 +11,7 @@ function StatusGlobal() {
     const [error, setError] = useState<string>()
 
     useEffect(() => {
-        axios.get("http://localhost:8080/server")
+        axios.get("https://servidor1.store:8080/server")
             .then((response) => {
                 let status: StatusResponse = response.data;
                 setStatus(status);
@@ -37,7 +37,7 @@ function StatusGlobal() {
     return (
         <div className='absolute w-screen h-screen bg-slate-400/70'>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 p-8 w-[70vw] h-[50vh] sm:h-72 rounded-xl">
-                <h1 className='text-center text-white text-2xl font-bold'>Servidore(s) Offline</h1>
+                <h1 className='text-center text-white text-2xl font-bold'>Servidor(es) Offline</h1>
                 <div className='grid grid-cols-3 grid-rows-2 gap-1 w-full h-3/4 items-center justify-between sm:flex-row'>
                     <div className='flex flex-col text-white items-center bg-slate-800 rounded-lg p-[1px]'>
                         <img className='w-20 sm:w-12' src={status.gateway == "online" ? "./server.svg" : "./serveroffline.svg"} alt="" />
