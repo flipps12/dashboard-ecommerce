@@ -11,7 +11,7 @@ function StatusGlobal() {
     const [error, setError] = useState<string>()
 
     useEffect(() => {
-        axios.get("https://servidor1.store:8080/server")
+        axios.get("http://servidor1.store:8080/server")  // http://localhost:8080/server // http://servidor1.store:8080/server
             .then((response) => {
                 let status: StatusResponse = response.data;
                 setStatus(status);

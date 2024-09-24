@@ -6,13 +6,19 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-const api = 'https://servidor1.store:8080/api/product/seller/products';
+const api = 'http://servidor1.store:8080/api/product/seller/products';
 
 function Products() {
     const [productsList, setProductsList] = useState<Array<products>>([])
 
     useEffect(() => {
-        axios.get(api, { withCredentials: true })
+        axios.get(api, {
+            withCredentials: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
+            }
+        })
             .then((response) => {
                 const data: products[] = response.data;
                 setProductsList(data);

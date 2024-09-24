@@ -4,7 +4,7 @@ import { AddProductInterface } from "../interface/addProductRequest";
 
 axios.defaults.withCredentials = true;
 
-const api = "https://servidor1.store:8080/api/product/seller";
+const api = "http://servidor1.store:8080/api/product/seller";
 
 function AddProduct() {
     const [data, setData] = useState<string>()
