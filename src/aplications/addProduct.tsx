@@ -4,7 +4,7 @@ import { AddProductInterface } from "../interface/addProductRequest";
 
 axios.defaults.withCredentials = true;
 
-const api = "http://servidor1.store:8080/api/product/seller";
+const api = "https://servidor1.store:8080/api/product/seller";
 
 function AddProduct() {
     const [data, setData] = useState<string>()
@@ -34,7 +34,13 @@ function AddProduct() {
             pictureUrl: (document.getElementById("pictureUrl") as HTMLInputElement)?.value ?? ""
         });
         console.log(dataRequest)
-        axios.post(api, dataRequest, { withCredentials: true })
+        axios.post(api, dataRequest, {
+            withCredentials: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
+            }
+        })
             .then((response) => {
                 const data: string = response.data;
                 setData(data);

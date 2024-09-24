@@ -6,7 +6,7 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-const api = 'http://servidor1.store:8080/api/product/seller/products';
+const api = 'https://servidor1.store:8080/api/product/seller/products';
 
 function Products() {
     const [productsList, setProductsList] = useState<Array<products>>([])
